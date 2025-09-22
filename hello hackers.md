@@ -49,6 +49,7 @@ I learned the following from this challenge :
 4. Commands like `hello` can also have arguments.  
 
 <br/>
+
 # Command History 
 The challenge aimed to teach that the shell maintains a history of all the commands used. Keys like upward and downward arrows can be used to scroll up and down the history.
 
