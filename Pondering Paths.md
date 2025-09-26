@@ -55,6 +55,147 @@ The materials provided by my mentor.
 <br/>
 
 
+# Position thy self 
+The challenge demanded to change into a specific directory using cd and then run /challenge/run.
+
+## My solve
+**Flag:** `pwn.college{UnBQ_XcnNdnWHDFAv5oNzuIphv0.QX2QTN0wSO5kjNzEzW}`
+
+After entering the command `/challenge/run` the shell gave me the directory that I was required to go to. I first navigated into the required directory with `cd`, then invoked `/challenge/run`.
+TERMINAL WORKING : 
+```
+hacker@paths~position-thy-self:~$ /challenge/run
+Incorrect...
+You are not currently in the /var directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-thy-self:~$ cd /var
+hacker@paths~position-thy-self:/var$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{UnBQ_XcnNdnWHDFAv5oNzuIphv0.QX2QTN0wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
 
 
+## What I learned
+I learned the following from this challenge : 
+1. The `cd` command changes the current working directory.
+2. Running programs may sometimes require being in a particular directory.
+
+
+## References 
+The materials provided by my mentor.
+<br/>
+
+# Position elsewhere
+The challenge demanded to cd into a different directory and then invoke the /challenge/run program.
+
+## My solve
+**Flag:** `pwn.college{4VdnJiJPMvq32QBu-DoXARa8ihA.QX4QTN0wSO5kjNzEzW}`
+
+After entering the command `/challenge/run` the shell gave me the directory that I was required to go to. I first navigated into the required directory with `cd`, then invoked `/challenge/run`.
+TERMINAL WORKING : 
+```
+hacker@paths~position-yet-elsewhere:~$ /challenge/run
+Incorrect...
+You are not currently in the /var directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-yet-elsewhere:~$ cd /var
+hacker@paths~position-yet-elsewhere:/var$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{4VdnJiJPMvq32QBu-DoXARa8ihA.QX4QTN0wSO5kjNzEzW}
+
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1.Multiple directory changes may be required before executing a file.
+2.cd is always relative to your current position unless you use an absolute path.
+
+
+## References 
+The materials provided by my mentor.
+<br/>
+
+
+# Position yet elsewhere
+The challenge demanded to cd yet again to another specified directory and run the /challenge/run program.
+
+## My solve
+**Flag:** `pwn.college{4VdnJiJPMvq32QBu-DoXARa8ihA.QX4QTN0wSO5kjNzEzW}`
+
+After entering the command `/challenge/run` the shell gave me the directory that I was required to go to. I first navigated into the required directory with `cd`, then invoked `/challenge/run`.
+TERMINAL WORKING : 
+```
+hacker@paths~position-yet-elsewhere:~$ /challenge/run
+Incorrect...
+You are not currently in the /var directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~position-yet-elsewhere:~$ cd /var
+hacker@paths~position-yet-elsewhere:/var$ /challenge/run
+Correct!!!
+/challenge/run is an absolute path, invoked from the right directory!
+Here is your flag:
+pwn.college{4VdnJiJPMvq32QBu-DoXARa8ihA.QX4QTN0wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1.Multiple directory changes may be required before executing a file.
+2.cd is always relative to your current position unless you use an absolute path.
+
+
+## References 
+The materials provided by my mentor.
+<br/>
+
+
+# Implicit relative paths, from /
+The challenge demanded running /challenge/run using a relative path from /.
+
+## My solve
+**Flag:** `pwn.college{4VdnJiJPMvq32QBu-DoXARa8ihA.QX4QTN0wSO5kjNzEzW}`
+
+I initially struggled with what this question asked of me. Ater multiple failed attempts of getting into /challenge/run, I figured out that we I was required to go into the root directory `/` first in order to use the relative path, after which I used the relative path to complete the challenge.
+TERMINAL WORKING : 
+```
+hacker@paths~implicit-relative-paths-from-:~$ /challenge/run
+Incorrect...
+You are not currently in the / directory.
+Please use the `cd` utility to change directory appropriately.
+hacker@paths~implicit-relative-paths-from-:~$ challenge/run
+bash: challenge/run: No such file or directory
+hacker@paths~implicit-relative-paths-from-:~$ cd challenge/run
+bash: cd: challenge/run: No such file or directory
+hacker@paths~implicit-relative-paths-from-:~$ cd /
+hacker@paths~implicit-relative-paths-from-:/$ cd challenge/run
+bash: cd: challenge/run: Not a directory
+hacker@paths~implicit-relative-paths-from-:/$ hacker@paths~implicit-relative-paths-from-:/hacker@paths~implicit-relative-paths-from-:/$hacker@paths~implicit-relative-paths-from-:/$hacker@paths~implicit-relative-paths-from-:/$hacker@paths~implichackhacker@phacker@phahacker@paths~implicit-relative-paths-from-:/$ challenge/run
+Correct!!!
+challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{Ed-zFzoS73jRbFWn__rCNqEesVW.QX5QTN0wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. Relative paths depend on the current working directory.
+2. If we are in /, the relative path omits the leading /.
+
+## References 
+The materials provided by my mentor.
+<br/>
 
