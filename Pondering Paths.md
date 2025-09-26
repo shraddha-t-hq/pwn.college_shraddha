@@ -199,3 +199,88 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
+# Explicit relative paths, from /
+The challenge demanded to use . in the relative path to run the challenge.
+
+## My solve
+**Flag:** `pwn.college{kWmOWx0r72n-zjgGNKEFGPkGfcP.QXwUTN0wSO5kjNzEzW}`
+
+I used `.` to invoke /challenge/run
+TERMINAL WORKING : 
+```
+hacker@paths~explicit-relative-paths-from-:/$ ./challenge/run
+Correct!!!
+./challenge/run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{kWmOWx0r72n-zjgGNKEFGPkGfcP.QXwUTN0wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. `.` refers to the current directory.
+2. Commands like ./challene/run ensure execution from the current folder.
+
+
+## References 
+The materials provided by my mentor.
+<br/>
+
+# Implicit relative path
+The challenge demanded to run `run` from inside the /challenge directory.
+
+## My solve
+**Flag:** `pwn.college{M6elF_JhCszzgWIJ74-S9KwRR-8.QXxUTN0wSO5kjNzEzW}`
+
+I first entered the directory `/challenge` after which I used the relative path using `.` to execute /run.
+TERMINAL WORKING : 
+```
+hacker@paths~implicit-relative-path:~$ cd /challenge
+hacker@paths~implicit-relative-path:/challenge$ ./run
+Correct!!!
+./run is a relative path, invoked from the right directory!
+Here is your flag:
+pwn.college{M6elF_JhCszzgWIJ74-S9KwRR-8.QXxUTN0wSO5kjNzEzW}
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. Linux does not run files in the current directory unless explicitly specified with ./.
+
+## References 
+The materials provided by my mentor.
+<br/>
+
+# Home sweet home 
+The challenge demanded to give /challenge/run a writable file inside the home directory as an argument (3 characters or less).
+
+## My solve
+**Flag:** `pwn.college{EZsnJsayVVsLps4urmWy0hi3E_9.QXzMDO0wSO5kjNzEzW}`
+
+Initially, i did not understand which argument I should have used which would have been 3 words or else. I took to the internet to find such an argument. I found  `~/f` and used it as an argument.
+TERMINAL WORKING : 
+```
+hacker@paths~home-sweet-home:/$ /challenge/run /usr
+The argument you provided must not have been longer than 3 characters (it's
+currently 4 characters long)!
+hacker@paths~home-sweet-home:/$ /challenge/run ~/f
+Writing the file to /home/hacker/f!
+... and reading it back to you:
+pwn.college{EZsnJsayVVsLps4urmWy0hi3E_9.QXzMDO0wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. ~ expands to the absolute path of the home directory.
+2. Arguments can be paths, and constraints may apply (like length).
+
+## References 
+The materials provided by my mentor.
+<br/>
