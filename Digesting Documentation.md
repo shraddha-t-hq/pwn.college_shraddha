@@ -29,7 +29,7 @@ The challenge required using a documented option that accepts a file path as an 
 
 ## My solve
 **Flag:** `pwn.college{A80tesL00Kt7YZBTGvfpfmb5YDr.QX1ITO0wSO5kjNzEzW}`
-I used the documented print option to request /flag.
+I used the documented print option to request `/flag`.
 </br>
 TERMINAL WORKING : 
 ```
@@ -44,7 +44,7 @@ This generated the flag and the challenge was completed!
 ## What I learned
 I learned the following from this challenge : 
 1. An argument command can be executed on a file using its absolute path.
-2. --printfile is used to print the contents of a file. 
+2. `--printfile` is used to print the contents of a file. 
 
 ## References 
 The materials provided by my mentor.
@@ -97,7 +97,7 @@ This generated the flag and the challenge was completed!
 
 ## What I learned
 I learned the following from this challenge : 
-1. To search within the manual '/' is used foloowed by the pattern we wnat to search.
+1. To search within the manual `/` is used foloowed by the pattern we want to search.
 
 ## References 
 pwn.college
@@ -127,7 +127,7 @@ This generated the flag and the challenge was completed!
 
 ## What I learned
 I learned the following from this challenge : 
-1. The man man command is a nested command that can be used to find other manual pages.
+1. The `man man` command is a nested command that can be used to find other manual pages.
 
 ## References 
 pwn.college
@@ -173,7 +173,7 @@ This generated the flag and the challenge was completed!
 
 ## What I learned
 I learned the following from this challenge : 
-1. --help can be used to navigate through commands.
+1. `--help` can be used to navigate through commands.
 
 ## References 
 pwn.college
