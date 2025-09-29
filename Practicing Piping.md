@@ -114,6 +114,7 @@ If you only see the second half above, you redirected in *truncate* mode (>)
 rather than *append* mode (>>), and so the write of the second half to stdout
 overwrote the initial write of the first half directly to the file. Try append
 mode!
+
 ```
 This generated the flag and the challenge was completed!
 
@@ -133,7 +134,6 @@ The challenge required redirecting the standard output (stdout) of `/challenge/r
 **Flag:** `pwn.college{4WkQUi5BCwd2qgUj30qMzp4n8BU.QX3YTN0wSO5kjNzEzW}`
 </br>
 I ran `/challenge/run` while redirecting stdout to `myflag` and stderr to `instructions`. Because both streams were redirected, the terminal stayed silent.Then I inspected the `myflag` file.
-
 <br/>
 TERMINAL WORKING : 
 ```
@@ -164,7 +164,6 @@ The challenge demanded to redirect the stdout of `/challenge/run` into `/tmp/dat
 **Flag:** `pwn.college{kemQAGl0MHmdLLou8JWdxR1wCzU.QX4EDO0wSO5kjNzEzW}`
 </br>
 I redirected `/challenge/run`’s stdout into `/tmp/data.txt` and then used `grep` to find the flag(as learnt before, all flags start with pwn.college) inside that file.
-
 <br/>
 TERMINAL WORKING : 
 ```
