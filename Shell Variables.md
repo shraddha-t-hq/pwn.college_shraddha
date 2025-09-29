@@ -118,6 +118,7 @@ The challenge asked to list exported variables (to find FLAG) using `env`.
 
 ## My solve
 **Flag:** `pwn.college{wIgQcG6eCVt4WZ8GzL3icmDN6uL.QX4UTN0wSO5kjNzEzW}`
+</br>
 I ran `env` to print all exported environment variables; `FLAG` appeared in the output, revealing the flag.
 <br/>
 TERMINAL WORKING : 
@@ -155,6 +156,7 @@ The challenge required capturing the stdout of `/challenge/run` directly into a 
 
 ## My solve
 **Flag:** `pwn.college{Mit_IoCqu6naKvFbwmrk3AwQHuH.QX1cDN1wSO5kjNzEzW}`
+</br>
 I executed `/challenge/run` inside `$()` and assigned it to PWN.Then I echoed `PWN`.
 <br/>
 TERMINAL WORKING : 
@@ -180,6 +182,7 @@ The challenge required using `read` to capture input (from stdin) into `PWN`.
 
 ## My solve
 **Flag:** `pwn.college{wd6lZ4gEnqES1iipbk1v1uCqh70.QX4cTN0wSO5kjNzEzW}`
+</br>
 I ran `read PWN` and supplied `COLLEGE` as input. 
 <br/>
 TERMINAL WORKING : 
@@ -203,6 +206,7 @@ The challenge required reading the contents of `/challenge/read_me` into the `PW
 
 ## My solve
 **Flag:** `pwn.college{035RwvVNc9U5lp2Ln5QU1b_-ahV.QXwIDO0wSO5kjNzEzW}`
+</br>
 I used input redirection(`<`) with `read`.
 <br/>
 TERMINAL WORKING : 
