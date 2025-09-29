@@ -54,6 +54,7 @@ The challenge required setting `PWN` to the multi-word value `"COLLEGE YEAH"`.
 
 ## My solve
 **Flag:** `pwn.college{UD6uehYNTinAdEDsB3KseX22g3U.QXwYTN0wSO5kjNzEzW}`
+</br>
 I set the multi-word value using double quotes. The challenge accepted the quoted multi-word string.
 <br/>
 TERMINAL WORKING : 
@@ -80,6 +81,7 @@ while setting `COLLEGE=PWN` only in the current shell (not exporting it) and the
 
 ## My solve
 **Flag:** `pwn.college{01GpJc9z3-UMnIg70ew1eEJKW1C.QXyYTN0wSO5kjNzEzW}`
+</br>
 I set `COLLEGE=PWN` (not exported) and exported `PWN=COLLEGE` using the export command. Then I started a child shell (`sh`), echoed PWN and ran `/challenge/run`.
 <br/>
 TERMINAL WORKING : 
