@@ -369,6 +369,38 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
+# Duplicating piped data with tee
+The challenge demanded that I pipe the output of `/challenge/pwn` into `/challenge/college`, but also intercept and see the data coming from `pwn` so I could determine what secret value college expected.
+
+## My solve
+**Flag:** `pwn.college{UDvQ7u5UounCjT8isy5d4yzSY46.QXxITO0wSO5kjNzEzW}`
+</br>
+I first inspected what `/challenge/pwn` required by reading its usage message, which showed the required SECRET_ARG. Then I invoked `/challenge/pwn` with that secret and piped the result into `/challenge/college`.
+<br/>
+TERMINAL WORKING : 
+```
+hacker@piping~duplicating-piped-data-with-tee:~$ cat pwn
+Usage: /challenge/pwn --secret [SECRET_ARG]
+
+SECRET_ARG should be "UDvQ7u5U"
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn --secret "UDvQ7u5U" | /challenge/college
+Processing...
+Correct! Passing secret value to /challenge/college...
+Great job! Here is your flag:
+pwn.college{UDvQ7u5UounCjT8isy5d4yzSY46.QXxITO0wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. `tee` (and simple inspection with `cat`) helps reveal what a producer program expects so you can supply the correct input to a program.  
+
+## References 
+The materials provided by my mentor.
+<br/>
+
 # Writing to multiple programs
 The challenge demanded duplicating the output of `/challenge/hack` and delivering it directly and simultaneously as stdin to both `/challenge/the` and `/challenge/planet`.
 
