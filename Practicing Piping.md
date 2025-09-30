@@ -318,6 +318,32 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
+# Process substitution for input 
+The challenge demanded comparing the outputs of two commands `/challenge/print_decoys_and_flag` and `/challenge/print_decoys` using process substitution so diff operates on the command outputs as if they were files.
+
+## My solve
+**Flag:** `pwn.college{8HkMAgPN5QHOLl4nGTkc_Fl1smr.0lNwMDOxwSO5kjNzEzW}`
+</br>
+I used input process substitution `<(command)` to provide `diff` with file-like paths that represent each command's stdout, then ran `diff` to show lines present in the first output but not the second.
+<br/>
+TERMINAL WORKING : 
+```
+hacker@piping~process-substitution-for-input:~$ diff <( /challenge/print_decoys_and_flag ) <( /challenge/print_decoys )
+8d7
+< pwn.college{8HkMAgPN5QHOLl4nGTkc_Fl1smr.0lNwMDOxwSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. `diff <(command1) <(command2)` elegantly compares two command outputs without creating temporary files.
+
+## References 
+The materials provided by my mentor.
+<br/>
+
 # Filtering with grep -v
 The challenge demanded filtering out lines containing the string `DECOY` from the mixed output of `/challenge/run` so that the single real flag remains visible.
 
