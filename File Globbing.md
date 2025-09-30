@@ -259,6 +259,41 @@ I learned the following from this challenge :
 pwn.college
 <br/>
 
+# Multiple options for tab completion 
+The challenge demanded using the shell's tab‑completion to disambiguate among multiple files that begin with the same prefix in `/challenge/files` (files starting with pwncollege) and then read the file.
+## My solve
+**Flag:** `pwn.college{shZH7UB1WmSei9V-Co1ZZNaI756.0lN0EzNxwSO5kjNzEzW}`
+</br>
+I navigated to the `/challenge/files` directory, used the shell's tab completion starting from the prefix `pwn` to reveal the available filenames, and then completed pwncollege-flag and read it with `cat`.
+</br>
+TERMINAL WORKING : 
+```
+hacker@globbing~multiple-options-for-tab-completion:~$ cd /challenge/files
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ ls pwn
+pwn                    pwncollege-flag
+pwn-college            pwncollege-flamingo
+pwn-the-planet         pwncollege-flyswatter
+pwncollege-family      pwncollege-hacking
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ ls pwncollege-
+pwncollege-family      pwncollege-flyswatter
+pwncollege-flag        pwncollege-hacking
+pwncollege-flamingo
+hacker@globbing~multiple-options-for-tab-completion:/challenge/files$ cat pwncollege-flag
+pwn.college{shZH7UB1WmSei9V-Co1ZZNaI756.0lN0EzNxwSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. Pressing TAB once in bash completes up to the common prefix when multiple matches exist. Pressing TAB a second time lists the possible completions.
+  
+
+## References 
+pwn.college
+<br/>
+
 # Auto completing tabs 
 The challenge required using tab completion to expand and execute a hidden command beginning with pwncollege.
 
