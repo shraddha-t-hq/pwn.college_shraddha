@@ -438,3 +438,30 @@ I learned the following from this challenge :
 
 ## References 
 pwn.college
+
+
+# Linking files
+The challenge demanded fooling a program that reads `/home/hacker/not-the-flag` into returning the real `/flag` contents by creating a symbolic link so the program opens the real flag instead of the decoy.
+
+## My solve
+**Flag:** `pwn.college{kpKkl0ez4eka52a0FT_IZGgCQzV.QX5ETN1wSO5kjNzEzW}`
+I created a symbolic link named `/home/hacker/not-the-flag` that points to `/flag` using `ln -s <target> <link>`. This causes any process that opens `/home/hacker/not-the-flag` to actually read `/flag`.
+</br>
+TERMINAL WORKING : 
+```
+hacker@commands~linking-files:~$ ln -s /flag /home/hacker/not-the-flag
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{kpKkl0ez4eka52a0FT_IZGgCQzV.QX5ETN1wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. `ln -s <target> <linkname>` creates a symbolic link at `<linkname>` that refers to `<target>`, causing accesses to the link to resolve to the target file.
+
+
+## References 
+pwn.college
