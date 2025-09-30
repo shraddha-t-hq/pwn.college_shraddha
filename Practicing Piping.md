@@ -244,3 +244,124 @@ I learned the following from this challenge :
 ## References 
 The materials provided by my mentor.
 <br/>
+
+# Filtering with grep -v
+The challenge demanded filtering out lines containing the string `DECOY` from the mixed output of `/challenge/run` so that the single real flag remains visible.
+
+## My solve
+**Flag:** `pwn.college{wye404Yrtqv0VovLetSP_IYUXni.0FOxEzNxwSO5kjNzEzW}`
+</br>
+Using `grep -v` I filtered the output of `/challenge/run` to remove all lines containing the substring  `DECOY`, leaving only the genuine flag line.
+<br/>
+TERMINAL WORKING : 
+```
+hacker@piping~filtering-with-grep-v:~$ /challenge/run | grep -v DECOY
+pwn.college{wye404Yrtqv0VovLetSP_IYUXni.0FOxEzNxwSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. `grep -v PATTERN` prints only the lines that do not match PATTERN, which is handy when unwanted lines are easier to describe.
+
+## References 
+The materials provided by my mentor.
+<br/>
+
+# Writing to multiple programs
+The challenge demanded duplicating the output of `/challenge/hack` and delivering it directly and simultaneously as stdin to both `/challenge/the` and `/challenge/planet`.
+
+## My solve
+**Flag:** `pwn.college{4GsN8pyyQ5qPn71uLRjGNxnmPCW.QXwgDN1wSO5kjNzEzW}`
+</br>
+I used `tee` together with output process substitution `>` so that tee wrote the stream into each command's stdin.
+<br/>
+TERMINAL WORKING : 
+```
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >( /challenge/the ) >( /challenge/planet )
+This secret data must directly and simultaneously make it to /challenge/the and
+/challenge/planet. Don't try to copy-paste it; it changes too fast.
+6047255262329914861
+Congratulations, you have duplicated data into the input of two programs! Here
+is your flag:
+pwn.college{4GsN8pyyQ5qPn71uLRjGNxnmPCW.QXwgDN1wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. Combining `tee` with `>` lets you fan out a stream to multiple consumer processes (and not just files).
+
+## References 
+The materials provided by my mentor.
+<br/>
+
+# Split piping stdout and stderr 
+The challenge demanded routing the stdout of `/challenge/hack` to `/challenge/planet` while simultaneously routing stderr to `/challenge/the`, without merging the two streams.
+
+## My solve
+**Flag:** `pwn.college{EAW6OruT69j8AC5rQA863i5FW-X.QXxQDM2wSO5kjNzEzW}`
+</br>
+I used process substitution for both file descriptors, redirecting stdout and stderr separately to different commands.
+<br/>
+TERMINAL WORKING : 
+```
+hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack > >( /challenge/planet ) 2> >( /challenge/the )
+Congratulations, you have learned a redirection technique that even experts
+struggle with! Here is your flag:
+pwn.college{EAW6OruT69j8AC5rQA863i5FW-X.QXxQDM2wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. > >(command) attaches stdout to command's stdin and 2> >(command) attaches stderr to command's stdin which allows separate routing.
+
+## References 
+The materials provided by my mentor.
+<br/>
+
+# Named pipes
+The challenge demanded creating a FIFO at `/tmp/flag_fifo` and redirecting `/challenge/run`'s stdout to that FIFO so that reading from the FIFO reveals the flag.
+
+## My solve
+**Flag:** `pwn.college{0sOuE79Mw3qGEiYPbSDZpKIIUAU.01MzMDOxwSO5kjNzEzW}`
+</br>
+I created a named pipe with mkfifo, then wrote the writer and reader in a way that they could synchronize. One way I ran it was:
+<br/>
+TERMINAL WORKING 1 : 
+```
+hacker@piping~named-pipes:~$ mkfifo /tmp/flag_fifo
+hacker@piping~named-pipes:~$ /challenge/run > /tmp/flag_
+fifo
+You're successfully redirecting /challenge/run to a FIFO at /tmp/flag_fifo!
+Bash will now try to open the FIFO for writing, to pass it as the stdout of
+/challenge/run. Recall that operations on FIFOs will *block* until both the
+read side and the write side is open, so /challenge/run will not actually be
+launched until you start reading from the FIFO!
+```
+This opens a reader in the background and then runs the writer which unblocks and writes into the FIFO.
+TERMINAL WORKING 2 : 
+```
+hacker@piping~named-pipes:~$ cat /tmp/flag_fifo
+You've correctly redirected /challenge/run's stdout to a FIFO at
+/tmp/flag_fifo! Here is your flag:
+pwn.college{0sOuE79Mw3qGEiYPbSDZpKIIUAU.01MzMDOxwSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. `mkfifo` creates a named FIFO which behaves like a file path but blocks writers/readers until the other side opens the pipe.
+
+## References 
+The materials provided by my mentor.
+<br/>
