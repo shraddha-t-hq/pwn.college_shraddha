@@ -274,6 +274,50 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
+# Grepping errors
+The challenge demanded that I make the program’s standard error visible to another process so I could grep through the error output and find the flag. Since | only pipes stdout, I had to redirect stderr (fd 2) into stdout (fd 1) first and then pipe the combined stream into grep.
+
+## My solve
+**Flag:** `pwn.college{ULLpJNlHBLTKqi1C3P8qWaykNRr.QX1ATO0wSO5kjNzEzW}`
+</br>
+I redirected stderr into stdout using `2>&1`, then piped the combined stream to `grep` to filter for the flag string.
+<br/>
+TERMINAL WORKING : 
+```
+hacker@piping~grepping-errors:~$ /challenge/run 2>&1 | grep 'pwn.college'
+[INFO] WELCOME! This challenge makes the following asks of you:
+[INFO] - the challenge checks for a specific process at the other end of stderr : grep
+[INFO] - the challenge will output a reward file if all the tests pass : /challenge/.data.txt
+
+[HYPE] ONWARDS TO GREATNESS!
+
+[INFO] This challenge will perform a bunch of checks.
+[INFO] If you pass these checks, you will receive the /challenge/.data.txt file.
+
+[TEST] You should have redirected my stderr to another process. Checking...
+[TEST] Performing checks on that process!
+
+[INFO] The process' executable is /nix/store/8b4vn1iyn6kqiisjvlmv67d1c0p3j6wj-gnugrep-3.11/bin/grep.
+[INFO] This might be different than expected because of symbolic links (for example, from /usr/bin/python to /usr/bin/python3 to /usr/bin/python3.8).
+[INFO] To pass the checks, the executable must be grep.
+
+[PASS] You have passed the checks on the process on the other end of my stderr!
+[PASS] Success! You have satisfied all execution requirements.
+pwn.college{ULLpJNlHBLTKqi1C3P8qWaykNRr.QX1ATO0wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. `2>&1` redirects stderr (fd 2) to the same destination as stdout (fd 1), allowing stderr to flow into a pipe.
+2. After `2>&1` can be piped (`|`) the combined stream to another program (`grep` in this case) to filter error messages.
+
+## References 
+The materials provided by my mentor.
+<br/>
+
 # Filtering with grep -v
 The challenge demanded filtering out lines containing the string `DECOY` from the mixed output of `/challenge/run` so that the single real flag remains visible.
 
