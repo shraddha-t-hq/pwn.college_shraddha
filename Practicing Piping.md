@@ -200,3 +200,47 @@ I learned the following from this challenge :
 ## References 
 The materials provided by my mentor.
 <br/>
+
+# Grepping live outputs
+The challenge required piping the stdout of `/challenge/run` into another program so that the flag could be found in the live stream of output.
+
+## My solve
+**Flag:** `pwn.college{Eh2rMEvdU-h2MEarkeO2m5q3fLa.QX5EDO0wSO5kjNzEzW}`
+</br>
+I ran `/challenge/run` and piped its stdout into `grep pwn.college` using `|`.
+<br/>
+TERMINAL WORKING : 
+```
+hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.college
+[INFO] WELCOME! This challenge makes the following asks of you:
+[INFO] - the challenge checks for a specific process at the other end of stdout : grep
+[INFO] - the challenge will output a reward file if all the tests pass : /challenge/.data.txt
+
+[HYPE] ONWARDS TO GREATNESS!
+
+[INFO] This challenge will perform a bunch of checks.
+[INFO] If you pass these checks, you will receive the /challenge/.data.txt file.
+
+[TEST] You should have redirected my stdout to another process. Checking...
+[TEST] Performing checks on that process!
+
+[INFO] The process' executable is /nix/store/8b4vn1iyn6kqiisjvlmv67d1c0p3j6wj-gnugrep-3.11/bin/grep.
+[INFO] This might be different than expected because of symbolic links (for example, from /usr/bin/python to /usr/bin/python3 to /usr/bin/python3.8).
+[INFO] To pass the checks, the executable must be grep.
+
+[PASS] You have passed the checks on the process on the other end of my stdout!
+[PASS] Success! You have satisfied all execution requirements.
+pwn.college{Eh2rMEvdU-h2MEarkeO2m5q3fLa.QX5EDO0wSO5kjNzEzW}
+
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. The pipe operator `|` connects stdout (fd 1) of the left-hand command to stdin (fd 0) of the right-hand command.
+2. Piping allows you to search live output without storing it first which is very useful for very large or streaming output.
+
+## References 
+The materials provided by my mentor.
+<br/>
