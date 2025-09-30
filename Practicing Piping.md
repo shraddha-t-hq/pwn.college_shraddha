@@ -157,6 +157,35 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
+# Redirecting input
+The challenge demanded redirecting a file named `PWN` into the stdin of `/challenge/run` so that the program reads the exact text `COLLEGE` from that file.
+
+## My solve
+**Flag:** `pwn.college{QMnjLvZy5WWBfdaWSdZksI9cW0j.QXwcTN0wSO5kjNzEzW}`
+</br>
+I created the file `PWN` containing the exact text `COLLEGE` using `echo` with output redirection, then redirected that file into `/challenge/run` using `<` so the program read COLLEGE from its standard input.
+<br/>
+TERMINAL WORKING : 
+```
+hacker@piping~redirecting-input:~$ echo COLLEGE > PWN
+hacker@piping~redirecting-input:~$ /challenge/run < PWN
+Reading from standard input...
+Correct! You have redirected the PWN file into my standard input, and I read
+the value 'COLLEGE' out of it!
+Here is your flag:
+pwn.college{QMnjLvZy5WWBfdaWSdZksI9cW0j.QXwcTN0wSO5kjNzEzW}
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. Using `< filename` redirects a file's contents into a command's standard input, allowing programs that read stdin to receive input from files.
+
+## References 
+The materials provided by my mentor.
+<br/>
+
 # Grepping stored results
 The challenge demanded to redirect the stdout of `/challenge/run` into `/tmp/data.txt`, then search (`grep`) the stored output for the flag.
 
@@ -321,7 +350,7 @@ This generated the flag and the challenge was completed!
 
 ## What I learned
 I learned the following from this challenge : 
-1. > >(command) attaches stdout to command's stdin and 2> >(command) attaches stderr to command's stdin which allows separate routing.
+1. `> >(command)` attaches stdout to command's stdin and `2> >(command)` attaches stderr to command's stdin which allows separate routing.
 
 ## References 
 The materials provided by my mentor.
