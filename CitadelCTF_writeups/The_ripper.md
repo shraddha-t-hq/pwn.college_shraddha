@@ -41,7 +41,6 @@ The following is the link to my google collab page wherein I solve this challeng
 
 
 ## What I learnt
-</br>
 **Bcrypt**
 </br>
 **Bcrypt** is a password hashing function designed to be slow and adaptive to resist brute-force and dictionary attacks.Specifically designed for hashing passwords.
