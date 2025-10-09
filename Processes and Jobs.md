@@ -406,7 +406,7 @@ The materials provided by my mentor.
 The challenge required foregrounding a backgrounded process using the `fg` command.
 
 ## My solve
-**Flag:** `pwn.college{8KyVAgJ2f__5M4W4AuCLOd7-FEo.QX5QDO0wSO5kjNzEzW}`
+**Flag:** `pwn.college{QUKezSTN8noHuwjVIaz_V-nUzaO.QX4QDO0wSO5kjNzEzW}`
 I ran `/challenge/run`, suspended it using `Ctrl+Z`, resumed it in the background with `bg`, and finally brought it back to the foreground with `fg`.
 </br>
 TERMINAL WORKING : 
@@ -478,7 +478,7 @@ The materials provided by my mentor.
 The challenge required retrieving the exit code of one program and using it as input to another.
 
 ## My solve
-**Flag:** `pwn.college{8KyVAgJ2f__5M4W4AuCLOd7-FEo.QX5QDO0wSO5kjNzEzW}`
+**Flag:** `pwn.college{U_nW-14Y6hMMgSAxGo2t8CfHlRj.QX5YDO1wSO5kjNzEzW}`
 I ran `/challenge/get-code` to obtain an exit code, checked it using `echo $?`, and passed the retrieved value to `/challenge/submit-code`.
 </br>
 TERMINAL WORKING : 
