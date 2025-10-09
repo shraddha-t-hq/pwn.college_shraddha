@@ -82,27 +82,6 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
-# Deleting characters 
-
-## My solve
-**Flag:** `pwn.college{Q8GkWhGm_6a37Hl7Usn-BVOV55J.QX3UTN0wSO5kjNzEzW}`
-
-<br/>
-TERMINAL WORKING : 
-```
-
-```
-This generated the flag and the challenge was completed!
-
-
-## What I learned
-I learned the following from this challenge : 
-1. 
-
-## References 
-The materials provided by my mentor.
-<br/>
-
 # Extracting the first lines with head 
 The challenge demanded that I grab only the first seven lines of a program’s output and pipe those lines into another program (/challenge/college) so it prints the flag. 
 ## My solve
