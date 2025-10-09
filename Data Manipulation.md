@@ -22,7 +22,7 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
-# Deleting characters 
+# Deleting new lines 
 The challenge demanded that I delete certain data from given data using the ` -d ` argument with ` tr `.
 
 ## My solve
@@ -82,7 +82,7 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
-# Deleting new lines 
+# Deleting characters 
 The challenge demanded that I print the contents of the environment variable named `FLAG`.
 
 ## My solve
@@ -106,3 +106,29 @@ I learned the following from this challenge :
 ## References 
 The materials provided by my mentor.
 <br/>
+
+# Extracting the first lines with head 
+The challenge demanded that I print the contents of the environment variable named `FLAG`.
+
+## My solve
+**Flag:** `pwn.college{Q8GkWhGm_6a37Hl7Usn-BVOV55J.QX3UTN0wSO5kjNzEzW}`
+
+I printed the `FLAG` variable using `echo $FLAG`.
+<br/>
+TERMINAL WORKING : 
+```
+hacker@variables~printing-variables:~$ echo $FLAG
+pwn.college{Q8GkWhGm_6a37Hl7Usn-BVOV55J.QX3UTN0wSO5kjNzEzW}
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. `$VAR` is used to expand and print a variable’s value.
+2. `echo` is the simplest way to display simple variable contents.
+
+## References 
+The materials provided by my mentor.
+<br/>
+
