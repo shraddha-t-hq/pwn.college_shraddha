@@ -84,7 +84,6 @@ The materials provided by my mentor.
 
 # Deleting characters 
 
-
 ## My solve
 **Flag:** `pwn.college{Q8GkWhGm_6a37Hl7Usn-BVOV55J.QX3UTN0wSO5kjNzEzW}`
 
