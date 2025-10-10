@@ -3,6 +3,7 @@ The challenge demanded to read the file named `flag` using the `cat` command.
 
 ## My solve
 **Flag:** `pwn.college{0qFpKvnrkqWnsO7XEiMkIGUst0j.QX4cTO0wSO5kjNzEzW}`
+<br/>
 After logging in, I used `cat flag` to display the file contents.
 </br>
 TERMINAL WORKING : 
@@ -27,6 +28,7 @@ The challenge demanded to read a flag file by giving its absolute path to `cat`.
 
 ## My solve
 **Flag:** `pwn.college{g4Oco2wJyj_YCFfP4wPC7sYB-5G.QX5ETO0wSO5kjNzEzW}`
+<br/>
 I provided the absolute path `/flag` to `cat` to read the file.  
 </br>
 TERMINAL WORKING : 
@@ -53,6 +55,7 @@ The challenge required retrieving a flag using an absolute path, without changin
 
 ## My solve
 **Flag:** `pwn.college{M8M7w3ZG4GmKJttcY00keND8cU2.QXwITO0wSO5kjNzEzW}`
+<br/>
 The flag was in `/opt/kropr/flag`, and I accessed it directly using `cat /opt/kropr/flag`.
 </br>
 TERMINAL WORKING : 
@@ -82,6 +85,7 @@ The challenge required finding a flag hidden within a large file using `grep` co
 
 ## My solve
 **Flag:** `pwn.college{M8M7w3ZG4GmKJttcY00keND8cU2.QXwITO0wSO5kjNzEzW}`
+<br/>
 I used grep command with the arguments of the string to be found (pwn.college-as each flag starts with it) and the address provided to search the file for the pattern and extract the flag.
 </br>
 TERMINAL WORKING : 
@@ -107,6 +111,7 @@ The challenge required identifying differences between two files to find the rea
 
 ## My solve
 **Flag:** `pwn.college{A88PZDE20mHMcp4o3Q-QE3nhNHS.01MwMDOxwSO5kjNzEzW}`
+<br/>
 I used `diff` command to compare files that were provided. The line unique to the first file revealed the flag.
 </br>
 TERMINAL WORKING : 
@@ -131,6 +136,7 @@ The challenge tested listing directory contents to discover a renamed executable
 
 ## My solve
 **Flag:** `{EYyAioENiW_U_nFbhIlxlTG7dwh.QX4IDO0wSO5kjNzEzW}`
+<br/>
 I used `ls` first to list all the files in /challenge directory, then identified a renamed executable and then ran it.
 </br>
 TERMINAL WORKING : 
@@ -155,7 +161,7 @@ The materials provided by my mentor.
 
 # Touching files
 The challenge required creating specific files in `/tmp` to unlock the flag.
-
+<br/>
 ## My solve
 **Flag:** `pwn.college{kx5_Njq7CcwMWo0VlWRF4qGEdPl.QXwMDO0wSO5kjNzEzW}`
 I first created two files using `touch` command in the /tmp directory and then executed /challenge/run.
@@ -178,11 +184,11 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
-# Removing files  //FLAG DINT GET COPIED REDO AND INSERT FLAG
+# Removing files
 The challenge tested file deletion with `rm`.
-
+<br/>
 ## My solve
-**Flag:** `pwn.college{kx5_Njq7CcwMWo0VlWRF4qGEdPl.QXwMDO0wSO5kjNzEzW}`
+**Flag:** `pwn.college{s4JbqhEJcR60jBc0kzxmRRXKGLj.QX2kDM1wSO5kjNzEzW}`
 I created a file called `delete_me` using the touch command and the removed it using `rm`.
 </br>
 TERMINAL WORKING : 
@@ -192,7 +198,7 @@ hacker@commands~removing-files:~$ touch delete_me
 hacker@commands~removing-files:~$ rm delete_me
 hacker@commands~removing-files:~$ /challenge/check
 Excellent removal. Here is your reward:
-
+pwn.college{s4JbqhEJcR60jBc0kzxmRRXKGLj.QX2kDM1wSO5kjNzEzW}
 ```
 This generated the flag and the challenge was completed!
 
@@ -210,6 +216,7 @@ The challenge required moving a file to a specific location.
 
 ## My solve
 **Flag:** `pwn.college{8GQ05C4xsxWaOX50a3J_01fb5FZ.0VOxEzNxwSO5kjNzEzW}`
+<br/>
 I moved the flag using `mv` command to the directory given. Then ran `/challenge/run` to verify
 </br>
 TERMINAL WORKING : 
@@ -236,6 +243,7 @@ The challenge tested identifying hidden files(which are files starting with `.`)
 
 ## My solve
 **Flag:** `pwn.college{4hTvLxno-wWczb3g246tUTkrl3v.QXwUDO0wSO5kjNzEzW}`
+<br/>
 I used ls -a to reveal hidden files in /. I found .flag-2367339979884.Initially I got confused on how to read it and tried the cd command, but then I realised that it was a file, which needed to be read with cat to extract the flag.
 </br>
 TERMINAL WORKING : 
@@ -271,6 +279,7 @@ The materials provided by my mentor.
 The challenge required to follow a chain of filesystem “breadcrumbs” (using `ls`, `cd`, `cat`, etc.) — obey the special hints (delayed / trapped / hidden) to reach the final file that contains the flag.
 ## My solve
 **Flag:** `pwn.college{oaXROjW_S9XEwCmZAUI-eQqlYSo.QX5IDO0wSO5kjNzEzW}`
+<br/>
 The challenge required me to use several commands and keen observations to find the flag.
 </br>
 TERMINAL WORKING : 
@@ -413,6 +422,7 @@ The challenge tested identifying hidden files(which are files starting with .).
 
 ## My solve
 **Flag:** `pwn.college{cOahzAa4Kbc0j218Fv3eWhAMhIK.QXxMDO0wSO5kjNzEzW}`
+<br/>
 I first entered into the /tmp directory, where i created another directory called `pwn` USING THE `mkdir` command.
 </br>
 TERMINAL WORKING : 
@@ -445,6 +455,7 @@ The challenge demanded fooling a program that reads `/home/hacker/not-the-flag` 
 
 ## My solve
 **Flag:** `pwn.college{kpKkl0ez4eka52a0FT_IZGgCQzV.QX5ETN1wSO5kjNzEzW}`
+<br/>
 I created a symbolic link named `/home/hacker/not-the-flag` that points to `/flag` using `ln -s <target> <link>`. This causes any process that opens `/home/hacker/not-the-flag` to actually read `/flag`.
 </br>
 TERMINAL WORKING : 
