@@ -3,6 +3,7 @@ The challenge demanded that I modify data using piping and the command ` tr `.
 
 ## My solve
 **Flag:** `pwn.college{sIUYk7xVNzv5aEg7ntvhmUEc8Cu.01MxEzNxwSO5kjNzEzW}`
+<br/>
 The given flag had to be toggled, so i wrote a string of uppercase, then lowercase letters to be replaced by the opposite string. This was done using the ` tr ` command.
 <br/>
 TERMINAL WORKING : 
@@ -27,6 +28,7 @@ The challenge demanded that I delete certain data from given data using the ` -d
 
 ## My solve
 **Flag:** `pwn.college{sL6pNteeO_fsslYsY2jz5x_UqV0.0VNxEzNxwSO5kjNzEzW}`
+<br/>
 The flag was segmented into different lines. Just like characters, escape sequences can also be removed. Here I removed the newline escape sequence using the piping ` tr -d "\n" `. 
 <br/>
 TERMINAL WORKING : 
@@ -86,7 +88,7 @@ The materials provided by my mentor.
 The challenge demanded that I grab only the first seven lines of a program’s output and pipe those lines into another program (/challenge/college) so it prints the flag. 
 ## My solve
 **Flag:** `pwn.college{I8PMEEzY9jj7867pQjoJjuRREV1.0lNxEzNxwSO5kjNzEzW}`
-
+<br/>
 I ran `/challenge/pwn`, limited its output to the first 7 lines using `head -n 7`, and piped that into `/challenge/college`. 
 <br/>
 TERMINAL WORKING : 
@@ -112,7 +114,7 @@ The materials provided by my mentor.
 The challenge demanded that I extract the second column (single characters) from many lines of numeric and character pairs produced by `/challenge/run`, then join those characters into a single continuous flag string. 
 ## My solve
 **Flag:** `pwn.college{QfQ1A0Xv2jiB6-ebsrEcI4vYNND.01NxEzNxwSO5kjNzEzW}`
-
+<br/>
 I ran `/challenge/run`, used cut `-d " " -f 2` to extract the second column, and piped the result to `tr -d "\n"` to join them together into one line.
 <br/>
 TERMINAL WORKING : 
@@ -197,7 +199,7 @@ The materials provided by my mentor.
 The challenge demanded that I sort a file of many fake flags so the real flag appears where we designed it to be when ordered alphabetically.
 ## My solve
 **Flag:** `pwn.college{UmuMBOkkyJ3TQnCvUtZ1aMdShtE.0FM0MDOxwSO5kjNzEzW}`
-
+<br/>
 The flags were kept in such a way that alphabetically, the real flag would come last, so I ran `sort -r /challenge/flags.txt` to reverse-sort all candidate flags. 
 Therefore, the first line of the reversed sorted output was the real flag.
 <br/>
