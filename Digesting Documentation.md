@@ -3,6 +3,7 @@ The challenge required reading the program documentation and invoking the docume
 
 ## My solve
 **Flag:** `pwn.college{c0rBkTwDp_IxKPD6wTFlf9fHfAC.QX0ITO0wSO5kjNzEzW}`
+<br/>
 I inspected the challenge docs and ran /challenge/challenge `--giveflag`, which the program accepted and printed the flag.
 </br>
 TERMINAL WORKING : 
@@ -29,6 +30,7 @@ The challenge required using a documented option that accepts a file path as an 
 
 ## My solve
 **Flag:** `pwn.college{A80tesL00Kt7YZBTGvfpfmb5YDr.QX1ITO0wSO5kjNzEzW}`
+<br/>
 I used the documented print option to request `/flag`.
 </br>
 TERMINAL WORKING : 
@@ -55,6 +57,7 @@ It demands using the `man` command to read the manuals of any command.
 
 ## My solve
 **Flag:** `pwn.college{Ug1r7wdr_GJfpJlaUbUfCSlZSDf.QX0EDO0wSO5kjNzEzW}`
+<br/>
 After reading the manual for `challenge`, the manual instructed to use the `--grwdrf VALUE` the value was also given as 170.
 </br>
 TERMINAL WORKING : 
@@ -81,6 +84,7 @@ The challenge required finding and trying cryptic options discovered via documen
 
 ## My solve
 **Flag:** `pwn.college{kRcv80oUKkP5jesYp4iUz3Br8ly.QX1EDO0wSO5kjNzEzW}`
+<br/>
 I searched the manual of challenge using `/` to find the flag argument. Then the argument was invoked.
 .
 </br>
@@ -107,6 +111,7 @@ pwn.college
 The challenge required locating a small/helpful man page and following its instructions.
 ## My solve
 **Flag:** `pwn.college{0nOS3kdrJisTclyRkmsqAmhqbWo.QX2EDO0wSO5kjNzEzW}`
+<br/>
 I found the `-k` command which would lead another man page containing details to retrieve the file. I initially thought the command inferred would directly solve the question, but it was the other manual page. Then I entered that manual page and searched for the argument to retrieve the flag. After which I executed the /challenge/challenge using the argument.
 </br>
 TERMINAL WORKING : 
