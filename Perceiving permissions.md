@@ -3,6 +3,7 @@ The challenge demanded that I change the ownership of file `/flag` to the hacker
 
 ## My solve
 **Flag:** `pwn.college{AKlnHXY0r2D2O3MaiVMb_qkA77f.QXxEjN0wSO5kjNzEzW}`
+<br/>
 Using the knowledge of `chown` command i used the command with the user I wanted to change the owner to(here, hacker) to change the ownership of `/flag`
 After doing that, the `/flag` file became `cat`-able. 
 <br/>
@@ -31,6 +32,7 @@ The challenge demanded that I change the group ownership of `/flag` so the group
 
 ## My solve
 **Flag:** `pwn.college{k_ADhLmjj_rpeGI_9O_r-HayYzk.QXxcjM1wSO5kjNzEzW}`
+<br/>
 I used `chgrp` to change the group owner of `/flag` to `hacker` (the group that can read it). After changing the group, I read the file with cat.
 <br/>
 TERMINAL WORKING : 
@@ -56,6 +58,7 @@ The challenge demanded that I discover my randomized primary group name with id,
 
 ## My solve
 **Flag:** `pwn.college{wO5peEPH8djOQ6orAf0OZ8S9ZZW.QXycjM1wSO5kjNzEzW}`
+<br/>
 I ran `id` to find my user’s group (gid and group name), used `chgrp` to change the group and then then cat /flag.
 <br/>
 TERMINAL WORKING : 
@@ -85,6 +88,7 @@ The challenge demanded that I change the permission bits of `/flag` (using `chmo
 
 ## My solve
 **Flag:** `pwn.college{oK1u-8QRq_TrYFpc7UzL0C0f1tt.QXzcjM1wSO5kjNzEzW}`
+<br/>
 I used `chmod o+r /flag` to add read permission for others (since this level allowed chmod for me). After that, I `cat`'d the file to read the flag.
 <br/>
 TERMINAL WORKING : 
@@ -111,6 +115,7 @@ The challenge required making `/challenge/run` executable.
 
 ## My solve
 **Flag:** `pwn.college{IO6L-QXaaWXL4nxWvFt18rxOoDa.QXyEjN0wSO5kjNzEzW}`
+<br/>
 I used `chmod u+x /challenge/run` to give execute permission to the owning user, then ran `/challenge/run`.
 <br/>
 TERMINAL WORKING : 
@@ -137,6 +142,7 @@ The challenge required repeatedly changing `/challenge/pwn` permissions through 
 
 ## My solve
 **Flag:** `pwn.college{IO6L-QXaaWXL4nxWvFt18rxOoDa.QXyEjN0wSO5kjNzEzW}`
+<br/>
 I followed whatever criteria was needed to tweak the permission for 8 rounds, then followed the instruction to change the permissions of the flag file.
 <br/>
 TERMINAL WORKING : 
@@ -386,6 +392,7 @@ until the challenge allowed me to change the permissions of `/flag`.
 
 ## My solve
 **Flag:** `pwn.college{IgjxHdTaHRm2dZiYq6ZyXqjxWPg.QXzETO0wSO5kjNzEzW}`
+<br/>
 For each round I read the current vs needed permission layout and used chained chmod modes to match the exact requirement. 
 After completing all rounds the challenge let me `chmod` `/flag`.After correcting some typos during attempts (e.g., /falg), the /flag was readable and I cat'd it.
 <br/>
@@ -716,6 +723,7 @@ The challenge required setting the SUID bit on `/challenge/getroot` so that when
 
 ## My solve
 **Flag:** `pwn.college{c_oZEJmhg0sOcJwKaENp5WgkM72.QXzEjN0wSO5kjNzEzW}`
+<br/>
 I attempted to set SUID on `/flag` but the challenge restricted chmod to only work on `/challenge/getroot`.
 I set the SUID bit on `/challenge/getroot` using `chmod u+s /challenge/getroot`, executed `/challenge/getroot` to get a root shell, then cat /flag as root to read the flag.
 <br/>
