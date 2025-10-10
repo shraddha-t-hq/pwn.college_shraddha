@@ -3,7 +3,7 @@ The challenge required launching a screen session to retrieve the flag.
 ## My solve
 **Flag:** `pwn.college{UotTMbUgIWiNQBOpArV2yCvh5_4.0VN4IDOxwSO5kjNzEzW}`
 
-I started a screen session by running `screen` command. 
+I started a screen session by running `screen` command. <br/>
 TERMINAL WORKING : 
 ```
 Congratulations! You're inside a screen session!
@@ -25,10 +25,10 @@ The materials provided by my mentor.
 The challenge required detaching from a screen session, running a command that sends the flag to the detached session, then reattaching to read it.
 ## My solve
 **Flag:** `pwn.college{M2Z9jTuI2QeZOvs3nRCrgnSLGXg.0lN4IDOxwSO5kjNzEzW}`
-
+<br/>
 I launched screen and detached using `Ctrl-A d`.
 I then ran /challenge/run which detected the detached screen session and sent the flag to it. 
-I reattached with `screen -r` and read the flag in the reattached session.
+I reattached with `screen -r` and read the flag in the reattached session.<br/>
 TERMINAL WORKING : 
 ```
 hacker@terminal-multiplexing~detaching-and-attaching:~$ screen
@@ -66,9 +66,9 @@ The materials provided by my mentor.
 The challenge required listing existing screen sessions and attaching to the one that contains the flag.
 ## My solve
 **Flag:** `pwn.college{I4TVkVvB9H8HwhykYOLWGLcP8QO.01N4IDOxwSO5kjNzEzW}`
-
+<br/>
 I listed screen sessions with `screen -ls`, identified the available session names, and attached to the session that contained the flag using `screen -r <session>`. 
-
+<br/>
 TERMINAL WORKING : 
 ```
 hacker@terminal-multiplexing~finding-sessions:~$ screen -ls
@@ -101,7 +101,7 @@ The materials provided by my mentor.
 The challenge required switching windows inside a screen session to find the flag in a specific window.
 ## My solve
 **Flag:** `pwn.college{srAppfBPIiKnD6sidaNspwx_Srl.0FO4IDOxwSO5kjNzEzW}`
-
+<br/>
 I attached to the provided screen session and switched to the target window using `Ctrl-A 0`. The flag was present in the indicated window.
 TERMINAL WORKING : 
 ```
@@ -127,7 +127,7 @@ The materials provided by my mentor.
 The challenge required detaching from a `tmux` session, running a command that sends the flag to the detached session, then reattaching to see it.
 ## My solve
 **Flag:** `pwn.college{4gwZxtcj43W0cAHHKnAaeeBNRBh.0VO4IDOxwSO5kjNzEzW}`
-
+<br/>
 I launched a tmux session and detached it using `Ctrl-B d`. Then, I ran `/challenge/run` which sent the flag to it. 
 I reattached with `tmux a` and read the flag.
 TERMINAL WORKING : 
@@ -166,7 +166,7 @@ The materials provided by my mentor.
 The challenge required switching windows inside a tmux session to find the flag in the target window.
 ## My solve
 **Flag:** `pwn.college{cftw5lfLHjJxKalgVGo6EusYSL_.0FM5IDOxwSO5kjNzEzW}`
-
+<br/>
 I used tmux window navigation Ctrl-B 0 to traverse to the window that contained the flag. The flag was printed there.
 TERMINAL WORKING : 
 ```
