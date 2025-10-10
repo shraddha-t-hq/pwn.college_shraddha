@@ -3,6 +3,7 @@ The challenge demanded that I run two commands in sequence using the `;` operato
 
 ## My solve
 **Flag:** `pwn.college{U8-uiUlnQrvkg65G81_Lo9QZQi-.QX1UDO0wSO5kjNzEzW}`
+<br/>
 I ran `/challenge/pwn` and then `/challenge/college` in one line **separated by a semicolon** so both commands executed one after the other.
 <br/>
 TERMINAL WORKING : 
@@ -28,6 +29,7 @@ The challenge required using `&&` so the second command runs only if the first s
 
 ## My solve
 **Flag:** `pwn.college{MN1NMESPGJFrgkHVvyjiBYylelQ.0lM0MDOxwSO5kjNzEzW}`
+<br/>
 I chained `/challenge/first-success` and `/challenge/second` with `&&` so the second command is executed only after the first exited successfully.
 <br/>
 TERMINAL WORKING : 
@@ -50,7 +52,8 @@ The materials provided by my mentor.
 This challenge required using `||` to run a fallback command when the first fails.
 
 ## My solve
-**Flag:** `pwn.college{4DqMYq6fm0pdXIu5OU0vgxP4mrw.01M0MDOxwSO5kjNzEzW}}`
+**Flag:** `pwn.college{4DqMYq6fm0pdXIu5OU0vgxP4mrw.01M0MDOxwSO5kjNzEzW}`
+<br/>
 I used `/challenge/first-failure || /challenge/second` so the second command ran only when the first failed.
 <br/>
 TERMINAL WORKING : 
@@ -74,6 +77,7 @@ The challenge asked me to put two commands into a script and run it with bash.
 
 ## My solve
 **Flag:** `pwn.college{0-Ldb4dF3cja1ES_oullsN4_p-q.QX4ETO0wSO5kjNzEzW}`
+<br/>
 I created `script.sh` containing the two commands and executed it with `bash`.
 <br/>
 TERMINAL WORKING : 
@@ -98,6 +102,7 @@ The materials provided by my mentor.
 This level required piping the combined output of a script into another command.
 ## My solve
 **Flag:** `pwn.college{0-Ldb4dF3cja1ES_oullsN4_p-q.QX4ETO0wSO5kjNzEzW}`
+<br/>
 I wrote a script that ran `/challenge/pwn` and `/challenge/college`, then piped the script’s output into `/challenge/solve`.
 <br/>
 TERMINAL WORKING : 
@@ -122,6 +127,7 @@ The materials provided by my mentor.
 The task was to make a script executable and run it directly **without** invoking `bash`.
 ## My solve
 **Flag:** `pwn.college{wN8B0LQTPRuDTE8vLW17wllBoI-.QX0cjM1wSO5kjNzEzW}`
+<br/>
 I wrote `script.sh` to call `/challenge/solve`, investigated the permissions of script.sh, set executable permissions, and ran it with `./script.sh`.
 <br/>
 TERMINAL WORKING : 
@@ -153,6 +159,7 @@ The materials provided by my mentor.
 The challenge asked for a script at `/home/hacker/solve.sh` whose first line is a proper shebang and which prints hack the planet.
 ## My solve
 **Flag:** `pwn.college{EmGSb2U3HWOiS0KUcOnqGkJACpD.0VOzMDOxwSO5kjNzEzW}`
+<br/>
 I created `/home/hacker/solve.sh` with `#!/bin/bash` as the first line and `echo "hack the planet"` after it.
 The file was written into using printf as it was the best method i could think of, then I made it executable and ran `/challenge/run`
 <br/>
@@ -182,7 +189,7 @@ The materials provided by my mentor.
 This level required a script that takes two arguments and prints them in reverse order.
 ## My solve
 **Flag:** `pwn.college{wg1TP7WIYDjXRN0OTASBdURuHat.0VNzMDOxwSO5kjNzEzW}`
-
+<br/>
 I wrote `/home/hacker/solve.sh` that echoes `$2 $1`, then ran it with two arguments.
 <br/>
 TERMINAL WORKING : 
@@ -211,7 +218,7 @@ The materials provided by my mentor.
 The challenge required printing `college` when the single argument is `pwn`, otherwise printing nothing.
 ## My solve
 **Flag:** `pwn.college{YtmKXGVLjLg03CIMn5BrbJmUfvY.0lNzMDOxwSO5kjNzEzW}`
-
+<br/>
 I used an `if` statement checking `$1 == "pwn"` and echoing `college` when **true**.
 <br/>
 SCRIPT :
@@ -248,7 +255,7 @@ The materials provided by my mentor.
 This task extended the previous one by requiring an `else` to print `nope` for other inputs.
 ## My solve
 **Flag:** `pwn.college{4_tVxrHLdUKUVZdf9Aa3BE9EXFD.01NzMDOxwSO5kjNzEzW}`
-
+<br/>
 I added an `else` branch to print `nope` when the argument is **not** `pwn`.
 <br/>
 SCRIPT :
@@ -287,7 +294,7 @@ The materials provided by my mentor.
 This level required `elif` branches to handle multiple inputs with different outputs.
 ## My solve
 **Flag:** `pwn.college{Y7589bfpIPPA4QVgwTwMdXw9848.0FOzMDOxwSO5kjNzEzW}`
-
+<br/>
 I implemented `if` , `elif` , `else` to cover `hack`, `pwn`, `learn`, and a default `unknown` case.
 <br/>
 SCRIPT :
@@ -338,7 +345,7 @@ The materials provided by my mentor.
 This challenge asked me to inspect `/challenge/ru`n to find the hardcoded password and provide it as input.
 ## My solve
 **Flag:** `pwn.college{oolN2yAVdyKpmwpOHKA33BJU7ur.0lMwgDOxwSO5kjNzEzW}`
-
+<br/>
 I used `cat` to read the script, found the correct password - `hack the PLANET`, then ran `/challenge/run` and provided that input to get the flag.
 <br/>
 
