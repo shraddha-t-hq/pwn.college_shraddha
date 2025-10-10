@@ -3,6 +3,7 @@ The challenge required finding a hidden `/challenge/run` file by listing running
 
 ## My solve
 **Flag:** `pwn.college{oiUoM6HmfbfFb_2Hj-s4E1tv0N-.QX4MDO0wSO5kjNzEzW}`
+<br/>
 I used `ps -aux` to list all running processes and found the `/challenge/3839-run-14367` process.
 </br>
 TERMINAL WORKING : 
@@ -36,9 +37,10 @@ The materials provided by my mentor.
 
 # Killing Processes
 The challenge required terminating a running process to allow `/challenge/run` to execute.
-
+<br/>
 ## My solve
 **Flag:** `pwn.college{AHfNzV5MXZqwulSz0Tl6zrXOmFx.QXyQDO0wSO5kjNzEzW}`
+<br/>
 I identified the `/challenge/dont_run` process using `ps -ef` to identify its PID and killed it with `kill 136`. Afterwards, I ran `/challenge/run` to retrieve the flag.
 </br>
 TERMINAL WORKING : 
@@ -85,6 +87,7 @@ The challenge required interrupting a process running in the terminal to access 
 
 ## My solve
 **Flag:** `pwn.college{g_ljc-NOQ34uYIMIf0MuneBZTP5.QXzQDO0wSO5kjNzEzW}`
+<br/>
 I ran `/challenge/run` and used `Ctrl-C` to interrupt the process. 
 </br>
 TERMINAL WORKING : 
@@ -112,6 +115,7 @@ The challenge required eliminating decoy processes to obtain the flag.
 
 ## My solve
 **Flag:** `pwn.college{8Hv_LHEgb18vy8LvHi5VMBIpgHq.0FNzMDOxwSO5kjNzEzW}`
+<br/>
 I identified `/challenge/decoy` processes using `ps -ef | grep /challenge/decoy` and killed them. I then read the flag from `/tmp/flag_fifo`.
 </br>
 TERMINAL WORKING : 
@@ -269,6 +273,7 @@ The challenge required suspending a running process and then resuming it.
 
 ## My solve
 **Flag:** `pwn.college{0Vk_bYNrjN3WcziPr0blEKwQQ0K.QX1QDO0wSO5kjNzEzW}`
+<br/>
 I ran `/challenge/run` and pressed `Ctrl-Z` to suspend the process. 
 </br>
 TERMINAL WORKING : 
@@ -315,6 +320,7 @@ The challenge required suspending and then resuming a process using the `fg` com
 
 ## My solve
 **Flag:** `pwn.college{gE8l5fGaf05GBGCDqDkspVw11iA.QX2QDO0wSO5kjNzEzW}`
+<br/>
 I executed `/challenge/run`, suspended it using `Ctrl+Z`, and then resumed it in the foreground using `fg`.
 </br>
 TERMINAL WORKING : 
@@ -348,6 +354,7 @@ The challenge required suspending a process, resuming it in the background, and 
 
 ## My solve
 **Flag:** `pwn.college{Ul8Sg6GJowoba1NJ8HMfFylhF34.QX3QDO0wSO5kjNzEzW}`
+<br/>
 I ran `/challenge/run`, suspended it with `Ctrl+Z`, resumed it in the background using `bg`, and then launched another instance of `/challenge/run` while the first was active.
 </br>
 TERMINAL WORKING : 
@@ -407,6 +414,7 @@ The challenge required foregrounding a backgrounded process using the `fg` comma
 
 ## My solve
 **Flag:** `pwn.college{QUKezSTN8noHuwjVIaz_V-nUzaO.QX4QDO0wSO5kjNzEzW}`
+<br/>
 I ran `/challenge/run`, suspended it using `Ctrl+Z`, resumed it in the background with `bg`, and finally brought it back to the foreground with `fg`.
 </br>
 TERMINAL WORKING : 
@@ -450,6 +458,7 @@ The challenge required foregrounding a backgrounded process using the `fg` comma
 
 ## My solve
 **Flag:** `pwn.college{8KyVAgJ2f__5M4W4AuCLOd7-FEo.QX5QDO0wSO5kjNzEzW}`
+<br/>
 I ran  `/challenge/run &` to launch the process directly in the background.
 </br>
 TERMINAL WORKING : 
@@ -479,6 +488,7 @@ The challenge required retrieving the exit code of one program and using it as i
 
 ## My solve
 **Flag:** `pwn.college{U_nW-14Y6hMMgSAxGo2t8CfHlRj.QX5YDO1wSO5kjNzEzW}`
+<br/>
 I ran `/challenge/get-code` to obtain an exit code, checked it using `echo $?`, and passed the retrieved value to `/challenge/submit-code`.
 </br>
 TERMINAL WORKING : 
