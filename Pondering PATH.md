@@ -75,3 +75,59 @@ I learned the following from this challenge :
 The materials provided by my mentor.
 <br/>
 
+# Adding Commands
+The challenge required creating a `win` command, adding its location to `PATH`, and enabling `/challenge/run` to find it.
+## My solve
+**Flag:** `pwn.college{UDHYbjZDnGRLqRL4ZakWCKnpg-m.QX2cjM1wSO5kjNzEzW}`
+<br/>
+Firstly, I located cat with `which cat`, created a win script that invokes the absolute `/run/dojo/bin/cat /flag`, made it executable, then I set `PATH=/home/hacker` (where I placed win), and then ran `/challenge/run`.
+TERMINAL WORKING : 
+```
+hacker@path~adding-commands:~$ which cat
+/run/dojo/bin/cat
+hacker@path~adding-commands:~$ touch win
+hacker@path~adding-commands:~$ printf '#!/bin/bash\n\n/run/dojo/bin/cat /flag' > win
+hacker@path~adding-commands:~$ chmod a+x win
+hacker@path~adding-commands:~$ PATH=/home/hacker
+hacker@path~adding-commands:~$ /challenge/run
+Invoking 'win'....
+pwn.college{UDHYbjZDnGRLqRL4ZakWCKnpg-m.QX2cjM1wSO5kjNzEzW}
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. You can create simple scripts and expose them by adding their directory to PATH.
+2. Using absolute paths for standard utilities (e.g., `/run/dojo/bin/cat`) avoids problems PATH is overwritten.
+
+## References 
+SENSAI
+<br/>
+
+# Hijack Commands
+The challenge required preventing `/challenge/run` from deleting the flag by providing a non-malicious `rm` in a directory on `PATH`.
+## My solve
+**Flag:** `pwn.college{Ujmh4lwWe_euCvRL9Gh2RKblvt-.QX3cjM1wSO5kjNzEzW}`
+<br/>
+I created a fake `rm` script in my home directory that actually cats /flag via `/run/dojo/bin/cat /flag`, made it executable, set `PATH=/home/hacker` so my rm is found first, and ran `/challenge/run`. The program invoked my rm.
+TERMINAL WORKING : 
+```
+hacker@path~hijacking-commands:~$ touch rm
+hacker@path~hijacking-commands:~$ printf '#!/bin/bash\n\n/run/dojo/bin/cat /flag' > rm
+hacker@path~hijacking-commands:~$ chmod a+x rm
+hacker@path~hijacking-commands:~$ PATH=/home/hacker
+hacker@path~hijacking-commands:~$ /challenge/run
+Trying to remove /flag...
+pwn.college{Ujmh4lwWe_euCvRL9Gh2RKblvt-.QX3cjM1wSO5kjNzEzW}
+```
+This generated the flag and the challenge was completed!
+
+
+## What I learned
+I learned the following from this challenge : 
+1. Placing a program with the same name as a common utility earlier in PATH lets you “hijack” calls to that utility.
+
+## References 
+SENSAI
+<br/>
