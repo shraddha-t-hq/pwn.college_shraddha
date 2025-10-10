@@ -3,6 +3,7 @@ The challenge demanded that run the `su` command to access the directory as root
 
 ## My solve
 **Flag:** `pwn.college{YV4Db82pyWdgUWHuQPknBek1lup.QX1UDN1wSO5kjNzEzW}`
+<br/>
 I ran the `su` command and then entered the password provided. Then I listed all the directories present to identify the flag file.
 <br/>
 TERMINAL WORKING : 
@@ -54,6 +55,7 @@ The challenge demanded that run the `su` command with the argument of a username
 
 ## My solve
 **Flag:** `pwn.college{Y7_p0Xe9a23xmrDOi3BsJ02U-AE.QX2UDN1wSO5kjNzEzW}`
+<br/>
 I ran the `su` command with the username `zardus` and then entered the password provided. 
 <br/>
 TERMINAL WORKING : 
@@ -81,6 +83,7 @@ The challenge demanded that I crack a leaked `/etc/shadow` hash (provided as /ch
 
 ## My solve
 **Flag:** `pwn.college{wlBpmSK1TagcxQ_3z-q9r1jLWvi.QX3UDN1wSO5kjNzEzW}`
+<br/>
 I ran `john /challenge/shadow-leak` to crack the leaked hash (it revealed **aardvark** as zardus' password), then used `su zardus` and supplied the cracked password, and finally executed `/challenge/run` to read the flag.
 <br/>
 TERMINAL WORKING : 
@@ -115,6 +118,7 @@ The materials provided by my mentor.
 The challenge demanded that I use `sudo` to read files as root, specifically to list root-owned files and retrieve the flag via a read of flag file.
 ## My solve
 **Flag:** `pwn.college{MzT5KkVM_rWbjQ6DCqXWHVp48ww.QX4UDN1wSO5kjNzEzW}`
+<br/>
 I used to `sudo` command to run `ls` and `ls -al`. Then I found the file containing flag from the list and ran `cat` coupled with sudo command. 
 <br/>
 TERMINAL WORKING : 
