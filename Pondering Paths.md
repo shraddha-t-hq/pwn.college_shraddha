@@ -3,6 +3,7 @@ The challenge demanded to invoke the /pwn program using its absolute pat
 
 ## My solve
 **Flag:** `pwn.college{0qFpKvnrkqWnsO7XEiMkIGUst0j.QX4cTO0wSO5kjNzEzW}`
+<br/>
 After logging in, I ran the /pwn command directly.
 TERMINAL WORKING : 
 ```
@@ -30,6 +31,7 @@ The challenge demanded to invoke the /challenge/run program using its absolute p
 
 ## My solve
 **Flag:** `pwn.college{0jc8hQXf0gQmIzLLbk3hiPGe-Sv.QX1QTN0wSO5kjNzEzW}`
+<br/>
 I used the absolute path `/challenge/run` directly.
 TERMINAL WORKING : 
 ```
@@ -60,7 +62,7 @@ The challenge demanded to change into a specific directory using cd and then run
 
 ## My solve
 **Flag:** `pwn.college{UnBQ_XcnNdnWHDFAv5oNzuIphv0.QX2QTN0wSO5kjNzEzW}`
-
+<br/>
 After entering the command `/challenge/run` the shell gave me the directory that I was required to go to. I first navigated into the required directory with `cd`, then invoked `/challenge/run`.
 TERMINAL WORKING : 
 ```
@@ -94,7 +96,7 @@ The challenge demanded to cd into a different directory and then invoke the /cha
 
 ## My solve
 **Flag:** `pwn.college{4VdnJiJPMvq32QBu-DoXARa8ihA.QX4QTN0wSO5kjNzEzW}`
-
+<br/>
 After entering the command `/challenge/run` the shell gave me the directory that I was required to go to. I first navigated into the required directory with `cd`, then invoked `/challenge/run`.
 TERMINAL WORKING : 
 ```
@@ -130,7 +132,7 @@ The challenge demanded to cd yet again to another specified directory and run th
 
 ## My solve
 **Flag:** `pwn.college{4VdnJiJPMvq32QBu-DoXARa8ihA.QX4QTN0wSO5kjNzEzW}`
-
+<br/>
 After entering the command `/challenge/run` the shell gave me the directory that I was required to go to. I first navigated into the required directory with `cd`, then invoked `/challenge/run`.
 TERMINAL WORKING : 
 ```
@@ -165,7 +167,7 @@ The challenge demanded running /challenge/run using a relative path from /.
 
 ## My solve
 **Flag:** `pwn.college{4VdnJiJPMvq32QBu-DoXARa8ihA.QX4QTN0wSO5kjNzEzW}`
-
+<br/>
 I initially struggled with what this question asked of me. Ater multiple failed attempts of getting into /challenge/run, I figured out that we I was required to go into the root directory `/` first in order to use the relative path, after which I used the relative path to complete the challenge.
 TERMINAL WORKING : 
 ```
@@ -204,7 +206,7 @@ The challenge demanded to use . in the relative path to run the challenge.
 
 ## My solve
 **Flag:** `pwn.college{kWmOWx0r72n-zjgGNKEFGPkGfcP.QXwUTN0wSO5kjNzEzW}`
-
+<br/>
 I used `.` to invoke /challenge/run
 TERMINAL WORKING : 
 ```
@@ -233,7 +235,7 @@ The challenge demanded to run `run` from inside the /challenge directory.
 
 ## My solve
 **Flag:** `pwn.college{M6elF_JhCszzgWIJ74-S9KwRR-8.QXxUTN0wSO5kjNzEzW}`
-
+<br/>
 I first entered the directory `/challenge` after which I used the relative path using `.` to execute /run.
 TERMINAL WORKING : 
 ```
@@ -260,7 +262,7 @@ The challenge demanded to give /challenge/run a writable file inside the home di
 
 ## My solve
 **Flag:** `pwn.college{EZsnJsayVVsLps4urmWy0hi3E_9.QXzMDO0wSO5kjNzEzW}`
-
+<br/>
 Initially, i did not understand which argument I should have used which would have been 3 words or else. I took to the internet to find such an argument. I found  `~/f` and used it as an argument.
 TERMINAL WORKING : 
 ```
